@@ -114,7 +114,7 @@ const states = {
       if (music.gameover) {
         music.gameover();
       }
-      states.overStart();
+      // states.overStart();
       return;
     }
     setTimeout(() => {
@@ -139,14 +139,14 @@ const states = {
   },
 
   // 暂停
-  pause: (isPause) => {
-    store.dispatch(actions.pause(isPause));
-    if (isPause) {
-      clearTimeout(states.fallInterval);
-      return;
-    }
-    states.auto();
-  },
+  // pause: (isPause) => {
+  //   store.dispatch(actions.pause(isPause));
+  //   if (isPause) {
+  //     clearTimeout(states.fallInterval);
+  //     return;
+  //   }
+  //   states.auto();
+  // },
 
   // 消除行
   clearLines: (matrix, lines) => {
@@ -180,6 +180,13 @@ const states = {
     store.dispatch(actions.lock(true));
     store.dispatch(actions.reset(true));
     store.dispatch(actions.pause(false));
+  },
+
+  gameOver: () => {
+    clearTimeout(states.fallInterval);
+    store.dispatch(actions.lock(true));
+    store.dispatch(actions.reset(true));
+    store.dispatch(actions.pause(true));
   },
 
   // 游戏结束动画完成

@@ -133,11 +133,11 @@ export default class Keyboard extends React.Component {
           ref={(c) => { this.dom_space = c; }}
         />
         <Button
-          color="red"
-          size="s2"
-          top={0}
-          left={196}
-          label={`${i18n.reset[lan]}(R)`}
+          color="#efcc19"
+          size="0"
+          top={115}
+          left={425}
+          // label={`${i18n.reset[lan]}(R)`}
           active={keyboard.get('reset')}
           ref={(c) => { this.dom_r = c; }}
         />
@@ -151,11 +151,12 @@ export default class Keyboard extends React.Component {
           ref={(c) => { this.dom_s = c; }}
         />
         <Button
-          color="green"
-          size="s2"
-          top={0}
-          left={16}
-          label={`${i18n.pause[lan]}(P)`}
+          color="#efcc19"
+          lassName="c"
+          size="0"
+          top={115}
+          left={425}
+          // label={`${i18n.pause[lan]}(P)`}
           active={keyboard.get('pause')}
           ref={(c) => { this.dom_p = c; }}
         />
