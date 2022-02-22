@@ -14,7 +14,7 @@ import Pause from '../components/pause';
 import Point from '../components/point';
 import Logo from '../components/logo';
 import Keyboard from '../components/keyboard';
-import Guide from '../components/guide';
+// import Guide from '../components/guide';
 
 import { transform, i18n, lan } from '../unit/const';
 import { visibilityChangeEvent, isFocus } from '../unit/';
@@ -119,7 +119,7 @@ class App extends React.Component {
           </div>
         </div>
         <Keyboard filling={filling} keyboard={this.props.keyboard} />
-        <Guide />
+        {/* <Guide /> */}
       </div>
     );
   }
