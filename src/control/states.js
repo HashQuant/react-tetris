@@ -6,6 +6,8 @@ import { speeds, blankLine, blankMatrix, clearPoints, eachLines } from '../unit/
 import { music } from '../unit/music';
 
 
+const DELAY_IN_MS = 30 * 1000;
+
 const getStartMatrix = (startLines) => { // 生成startLines
   const getLine = (min, max) => { // 返回标亮个数在min~max之间一行方块, (包含边界)
     const count = parseInt((((max - min) + 1) * Math.random()) + min, 10);
@@ -40,6 +42,7 @@ const getStartMatrix = (startLines) => { // 生成startLines
 const states = {
   // 自动下落setTimeout变量
   fallInterval: null,
+  autoIncreaseSpeedRunInterVal: null,
 
   // 游戏开始
   start: () => {
@@ -55,6 +58,8 @@ const states = {
     store.dispatch(actions.moveBlock({ type: state.get('next') }));
     store.dispatch(actions.nextBlock());
     states.auto();
+    clearInterval(states.autoIncreaseSpeedRunInterVal);
+    states.autoIncreaseSpeedRunInterVal = setInterval(states.increaseSpeedRun, DELAY_IN_MS);
   },
 
   // 自动下落
@@ -115,6 +120,7 @@ const states = {
         music.gameover();
       }
       // states.overStart();
+      clearInterval(states.autoIncreaseSpeedRunInterVal);
       return;
     }
     setTimeout(() => {
@@ -169,9 +175,22 @@ const states = {
     states.dispatchPoints(addPoints);
 
     const speedAdd = Math.floor(clearLines / eachLines); // 消除行数, 增加对应速度
-    let speedNow = state.get('speedStart') + speedAdd;
-    speedNow = speedNow > 6 ? 6 : speedNow;
+    // let speedNow = state.get('speedStart') + speedAdd;
+    let speedNow = state.get('speedRun') + speedAdd;
+    speedNow = speedNow > speeds.length ? speeds.length : speedNow;
     store.dispatch(actions.speedRun(speedNow));
+  },
+
+  increaseSpeedRun: () => {
+    const state = store.getState();
+    const nowSpeed = state.get('speedRun');
+    const newSpeedRun = nowSpeed >= speeds.length ? speeds.length : (nowSpeed + 1);
+    if (newSpeedRun < speeds.length) {
+      store.dispatch(actions.speedRun(newSpeedRun));
+    } else {
+      store.dispatch(actions.speedRun(newSpeedRun));
+      clearInterval(states.autoIncreaseSpeedRunInterVal);
+    }
   },
 
   // 游戏结束, 触发动画
@@ -180,6 +199,7 @@ const states = {
     store.dispatch(actions.lock(true));
     store.dispatch(actions.reset(true));
     store.dispatch(actions.pause(false));
+    clearInterval(states.autoIncreaseSpeedRunInterVal);
   },
 
   gameOver: () => {
@@ -187,6 +207,7 @@ const states = {
     store.dispatch(actions.lock(true));
     store.dispatch(actions.reset(true));
     store.dispatch(actions.pause(true));
+    clearInterval(states.autoIncreaseSpeedRunInterVal);
   },
 
   // 游戏结束动画完成
@@ -196,6 +217,7 @@ const states = {
     store.dispatch(actions.reset(false));
     store.dispatch(actions.lock(false));
     store.dispatch(actions.clearLines(0));
+    clearInterval(states.autoIncreaseSpeedRunInterVal);
   },
 
   // 写入分数

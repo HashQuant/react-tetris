@@ -1,9 +1,9 @@
 import * as reducerType from '../../unit/reducerType';
-import { lastRecord } from '../../unit/const';
+import { lastRecord, speeds } from '../../unit/const';
 
 let initState = lastRecord && !isNaN(parseInt(lastRecord.speedRun, 10)) ?
   parseInt(lastRecord.speedRun, 10) : 1;
-if (initState < 1 || initState > 6) {
+if (initState < 1 || initState > speeds.length) {
   initState = 1;
 }
 
