@@ -128,37 +128,49 @@ export default class Keyboard extends React.Component {
           size="s0"
           top={100}
           left={52}
-          label={`${i18n.drop[lan]} (SPACE)`}
+          label={`${i18n.play[lan]}`}
           active={keyboard.get('drop')}
           ref={(c) => { this.dom_space = c; }}
         />
+        {/*
         <Button
-          color="#efcc19"
-          size="0"
-          top={115}
-          left={425}
-          // label={`${i18n.reset[lan]}(R)`}
+          color="red"
+          size="s2"
+          top={0}
+          left={196}
+          label={`${i18n.reset[lan]}(R)`}
           active={keyboard.get('reset')}
           ref={(c) => { this.dom_r = c; }}
         />
+         */}
+        <Button
+          color="red"
+          size="s2"
+          top={0}
+          left={16}
+          label={`${i18n.sound[lan]}(S)`}
+          active={keyboard.get('music')}
+          ref={(c) => { this.dom_s = c; }}
+        />
+        {/*
         <Button
           color="green"
           size="s2"
           top={0}
           left={106}
-          label={`${i18n.sound[lan]}(S)`}
-          active={keyboard.get('music')}
-          ref={(c) => { this.dom_s = c; }}
+          label={`${i18n.play[lan]}`}
+          active={keyboard.get('drop')}
+          ref={(c) => { this.dom_space = c; }}
         />
+         */}
         <Button
-          color="#efcc19"
-          lassName="c"
-          size="0"
-          top={115}
-          left={425}
-          // label={`${i18n.pause[lan]}(P)`}
-          active={keyboard.get('pause')}
-          ref={(c) => { this.dom_p = c; }}
+          color="green"
+          size="s2"
+          top={0}
+          left={106}
+          label={`${i18n.leader_board[lan]}`}
+          active={keyboard.get('leaderBoard')}
+          ref={(c) => { this.dom_leaderBoard = c; }}
         />
       </div>
     );

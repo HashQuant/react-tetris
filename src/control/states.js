@@ -145,14 +145,14 @@ const states = {
   },
 
   // 暂停
-  // pause: (isPause) => {
-  //   store.dispatch(actions.pause(isPause));
-  //   if (isPause) {
-  //     clearTimeout(states.fallInterval);
-  //     return;
-  //   }
-  //   states.auto();
-  // },
+  pause: (isPause) => {
+    store.dispatch(actions.pause(isPause));
+    if (isPause) {
+      clearTimeout(states.fallInterval);
+      return;
+    }
+    states.auto();
+  },
 
   // 消除行
   clearLines: (matrix, lines) => {

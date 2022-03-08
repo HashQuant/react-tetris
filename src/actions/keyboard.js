@@ -56,6 +56,13 @@ function pause(data) {
   };
 }
 
+function leaderBoard(data) {
+  return {
+    type: reducerType.LEADER_BOARD,
+    data,
+  };
+}
+
 export default {
   drop,
   down,
@@ -65,4 +72,5 @@ export default {
   reset,
   music,
   pause,
+  leaderBoard,
 };

@@ -4,7 +4,7 @@
   "data": {
     "title": {
       "cn": "俄罗斯方块",
-      "en": "T E T R I S",
+      "en": "Cryptris",
       "fr": "T E T R I S",
       "fa": "خانه سازی"
     },
@@ -119,6 +119,18 @@
     "drop": {
       "cn": "掉落",
       "en": "Drop",
+      "fr": "Tomber",
+      "fa": "سقوط"
+    },
+    "play": {
+      "cn": "掉落",
+      "en": "Play",
+      "fr": "Tomber",
+      "fa": "سقوط"
+    },
+    "leader_board": {
+      "cn": "掉落",
+      "en": "Leader board",
       "fr": "Tomber",
       "fa": "سقوط"
     }
