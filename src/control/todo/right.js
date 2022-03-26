@@ -42,7 +42,7 @@ const down = (store) => {
       } else {
         // let speed = state.get('speedStart');
         // speed = speed + 1 > 6 ? 1 : speed + 1;
-        store.dispatch(actions.speedStart(6));
+        store.dispatch(actions.speedStart(1));
       }
     },
   });

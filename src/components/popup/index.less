@@ -1,0 +1,100 @@
+.leaderboardList {
+    display: none;
+    width: 100%;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    border-radius: 15px;
+    z-index: 1;
+    position: absolute;
+    &.active {
+        display: block;
+      }
+}
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: solid 3px #f50505;
+
+}
+
+.leaderboardList a {
+    text-decoration: none;
+}
+
+.item {
+    overflow: hidden;
+    border-bottom: solid 1px #e6e0e0;
+    padding: 10px 0 10px 10px;
+}
+
+.rank {
+    float: left;
+    font-size: 20px;
+    margin-top: 30px;
+    min-width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.rankInfo {
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.points {
+    font-size: 18px;
+    color: #1abc9c;
+    padding-right: 20px;
+    white-space: nowrap;
+    float: right;
+    margin-top: 20px;
+}
+
+.avatar {
+    float: left;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 5px;
+    margin-right: 10px;
+    background-color: #3a464b;
+    overflow: hidden;
+}
+
+.name {
+    display: inline-block;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: .875rem;
+    font-weight: 300;
+    font-weight: bold;
+    border-radius: 100%;
+    background-color: #ee0a0a;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close:hover {
+    color: black;
+}

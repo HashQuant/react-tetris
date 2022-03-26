@@ -7,7 +7,7 @@ if (initState < 1 || initState > speeds.length) {
   initState = 1;
 }
 
-initState = 6;
+initState = 1;
 
 const speedStart = (state = initState, action) => {
   switch (action.type) {

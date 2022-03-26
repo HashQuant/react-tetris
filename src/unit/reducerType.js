@@ -21,3 +21,5 @@ export const KEY_RESET = 'KEY_RESET';
 export const KEY_MUSIC = 'KEY_MUSIC';
 export const KEY_PAUSE = 'KEY_PAUSE';
 export const FOCUS = 'FOCUS';
+export const LEADER_BOARD = 'LEADER_BOARD';
+export const SHOW_LEADER_BOARD = 'SHOW_LEADER_BOARD';

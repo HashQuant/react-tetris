@@ -14,6 +14,7 @@ import Pause from '../components/pause';
 import Point from '../components/point';
 import Logo from '../components/logo';
 import Keyboard from '../components/keyboard';
+import Popup from '../components/popup';
 // import Guide from '../components/guide';
 
 import { transform, i18n, lan } from '../unit/const';
@@ -89,6 +90,7 @@ class App extends React.Component {
         style={size}
       >
         <div className={classnames({ [style.rect]: true, [style.drop]: this.props.drop })}>
+          <Popup popup={this.props.popup} keyboard={this.props.keyboard} />
           <Decorate />
           <div className={style.screen}>
             <div className={style.panel}>
@@ -141,6 +143,7 @@ App.propTypes = {
   reset: propTypes.bool.isRequired,
   drop: propTypes.bool.isRequired,
   keyboard: propTypes.object.isRequired,
+  popup: propTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -158,6 +161,7 @@ const mapStateToProps = (state) => ({
   reset: state.get('reset'),
   drop: state.get('drop'),
   keyboard: state.get('keyboard'),
+  popup: state.get('popup'),
 });
 
 export default connect(mapStateToProps)(App);

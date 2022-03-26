@@ -2,6 +2,7 @@ import { getNextType } from '../unit';
 import * as reducerType from '../unit/reducerType';
 import Block from '../unit/block';
 import keyboard from './keyboard';
+import popup from './popup';
 
 function nextBlock(next = getNextType()) {
   return {
@@ -108,6 +109,7 @@ function focus(data) {
   };
 }
 
+
 export default {
   nextBlock,
   moveBlock,
@@ -125,4 +127,5 @@ export default {
   keyboard,
   music,
   focus,
+  popup,
 };

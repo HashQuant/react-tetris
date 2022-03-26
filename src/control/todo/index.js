@@ -4,8 +4,9 @@ import down from './down';
 import rotate from './rotate';
 import space from './space';
 import s from './s';
-import r from './r';
-import p from './p';
+import leaderBoard from './leaderBoard';
+// import r from './r';
+// import p from './p';
 
 export default {
   left,
@@ -13,7 +14,8 @@ export default {
   rotate,
   right,
   space,
-  r,
-  p,
+  // r,
+  // p,
   s,
+  leaderBoard,
 };
